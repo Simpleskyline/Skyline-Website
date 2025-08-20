@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Skyline Projects</title>
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+ <style>
+  #banner {
+    width: 100%;           /* take full width */
+    height: 250px;         /* fixed height */
+    object-fit: cover;     /* crop to fit nicely */
+    border-radius: 8px;    /* optional: smooth corners */
+  }
+</style>
+
+ <body>
+ <div class="container">
+    <h1 class="text-center">SKYLINE FX</h1>
+ <img class="img-fluid" id="banner" src="{{url_for('static', filename='images/fx.jpeg') }}" alt="my photo">
+ <h2 class="text-center">About Skyline</h2>
+ <p>
+     A forex company is a licensed financial institution that facilitates the exchange and trading of global currencies.
+     It provides clients with access to secure trading platforms, real-time market data, risk management tools, and professional support.
+     By enabling individuals, businesses, and investors to trade currency pairs, the company helps clients capitalize on market opportunities while ensuring compliance with international financial regulations.
+ </p>
+
+ <h2 class="text-center">Open Positions</h2>
+     {% for job in jobs %}
+       {% include 'jobitems.html' %}
+     {% endfor %}
+
+     <div class="text-center">
+ <button class="btn btn-primary btn-lg">Contact Us</button>
+         <P class="mt-4">Copyright 2022 Skylinefx</P>
+     </div>
+
+     </div>
+ </body>
+</html>
